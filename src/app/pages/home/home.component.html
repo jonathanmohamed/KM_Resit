@@ -1,0 +1,128 @@
+<a href="login">Sign out</a>
+<p>EMAIL: {{profileService.getAcc()._email}}</p>
+<p>IS ADMIN: {{profileService.getAcc()._isAdmin}}</p>
+
+<div *ngIf="profileService.isAdmin()">
+	<p>This element is only visible if the user is an admin</p>
+</div>
+
+
+<h1 id="title">Weather System</h1>
+<h3> Select your location</h3>
+
+<select name="location" id="location">
+	<option value="Amsterdamn">Amsterdamn</option>
+	<option value="London">London</option>
+	<option value="Paris">Paris</option>
+	<option value="Berlin">Berlin</option>
+</select>
+
+<hr>
+<h1>Warnings</h1>
+
+<h2 class="warnings">Precipitation : </h2>
+<h2 class="warnings">Temperature : </h2>
+<h2 class="warnings">Soil Frost : </h2>
+
+<hr>
+
+<h1>Forecast</h1>
+
+<table class="forecastTable">
+	<thead>
+	<tr>
+		<th>Header</th>
+		<th>Header</th>
+		<th>Header</th>
+		<th>Header</th>
+		<th>Header</th>
+		<th>Header</th>
+		<th>Header</th>
+		<th>Header</th>
+		<th>Header</th>
+		<th>Header</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td class="firstRow">Row</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+	</tr>
+	<tr>
+		<td class="firstRow">Row</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+	</tr>
+	<tr>
+		<td class="firstRow">Row</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+	</tr>
+	<tr>
+		<td class="firstRow">Row</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+	</tr>
+	<tr>
+		<td class="firstRow">Row</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+	</tr>
+	<tr>
+		<td class="firstRow">Row</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+		<td>Cell</td>
+	</tr>
+	</tbody>
+</table>
+
+
+<hr>
+
+<h1>Long Term History</h1>
+
+<h2>Temperature</h2>
+<h2>Precipitation</h2>

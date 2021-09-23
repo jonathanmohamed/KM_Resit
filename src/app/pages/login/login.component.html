@@ -1,0 +1,16 @@
+<p>To login as admin use password admin</p>
+<div class="form">
+	<form [formGroup]="form" novalidate (submit)="login()">
+		<div class="email">
+			<input type="text" formControlName="email" placeholder="Email" />
+		</div>
+		<div class="password">
+			<input type="password" formControlName="password" placeholder="Password" />
+		</div>
+		<div class="buttons">
+			<button type="submit">
+				<b>Login</b>
+			</button>
+		</div>
+	</form>
+</div>

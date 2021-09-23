@@ -1,0 +1,36 @@
+#title{
+	text-align: center;
+}
+
+ hr{//for HR thickness
+	 height: 2px;
+	 border: none;
+	 background: black;
+ }
+.warnings{
+	padding-left: 30px;
+}
+table.forecastTable {
+	width: 100%;
+	background-color: #ffffff;
+	border-collapse: collapse;
+	border-width: 2px;
+	border-color: #ffcc00;
+	border-style: solid;
+	color: #000000;
+}
+
+table.forecastTable td, table.forecastTable th {
+	border-width: 2px;
+	border-color: #ffcc00;
+	border-style: solid;
+	padding: 3px;
+}
+
+table.forecastTable thead {
+	background-color: #ffcc00;
+}
+.firstRow{
+	background-color: #ffcc00;
+	margin-left: 5px;
+}
