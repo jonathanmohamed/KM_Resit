@@ -1,5 +1,5 @@
 <a href="login">Sign out</a>
-<p>EMAIL: {{profileService.getAcc()._email}}</p>
+<p (click)="sound()">EMAIL: {{profileService.getAcc()._email}}</p>
 <p>IS ADMIN: {{profileService.getAcc()._isAdmin}}</p>
 
 <div *ngIf="profileService.isAdmin()">
