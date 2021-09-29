@@ -14,8 +14,8 @@ export interface Weather {
 	pressure: number;
 	humidity: number;
 	dewPoint: number;
-	windSpeed: number;
-	windDeg: number;
+	wind_speed: number;
+	wind_deg: number;
 	windGust: number;
 	weather: WeatherIdentification[];
 	clouds: number;

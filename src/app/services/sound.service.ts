@@ -6,7 +6,7 @@ import {Injectable} from '@angular/core';
 export class SoundService {
 	public static playAudio(): void {
 		const audio = new Audio();
-		audio.src = '../../assets/audio/beep_sound.wav';
+		audio.src = '../../assets/audio/alarm.wav';
 		audio.load();
 		audio.play();
 	}

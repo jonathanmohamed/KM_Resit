@@ -6,23 +6,20 @@
 	<p>This element is only visible if the user is an admin</p>
 </div>
 
-
+<div *ngIf="weather">
 <h1 id="title">Weather System</h1>
 <h3> Select your location</h3>
 
 <select name="location" id="location">
-	<option value="Amsterdamn">Amsterdamn</option>
-	<option value="London">London</option>
-	<option value="Paris">Paris</option>
-	<option value="Berlin">Berlin</option>
+	<option *ngFor="let city of getCityList()" >{{city.name}}</option>
 </select>
 
 <hr>
 <h1>Warnings</h1>
 
-<h2 class="warnings">Precipitation : </h2>
-<h2 class="warnings">Temperature : </h2>
-<h2 class="warnings">Soil Frost : </h2>
+<h2 class="warnings">Precipitation : {{this.precipitationWarning}}</h2>
+<h2 class="warnings">Temperature : {{this.tempWarning}}</h2>
+<h2 class="warnings">Soil Frost : {{this.frostWarning}}</h2>
 
 <hr>
 
@@ -31,90 +28,33 @@
 <table class="forecastTable">
 	<thead>
 	<tr>
-		<th>Header</th>
-		<th>Header</th>
-		<th>Header</th>
-		<th>Header</th>
-		<th>Header</th>
-		<th>Header</th>
-		<th>Header</th>
-		<th>Header</th>
-		<th>Header</th>
-		<th>Header</th>
+		<th></th>
+		<th>Today</th>
+		<th>Day 1</th>
+		<th>Day 2</th>
+		<th>Day 3</th>
+		<th>Day 4</th>
+		<th>Day 5</th>
+		<th>Day 6</th>
+		<th>Day 7</th>
 	</tr>
 	</thead>
 	<tbody>
 	<tr>
-		<td class="firstRow">Row</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
+		<td class="firstRow">Min temp (K)</td>
+		<td *ngFor="let day of getMinTemps()">{{day}}</td>
 	</tr>
 	<tr>
-		<td class="firstRow">Row</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
+		<td class="firstRow">Max temp (K)</td>
+		<td *ngFor="let day of getMaxTemps()">{{day}}</td>
 	</tr>
 	<tr>
-		<td class="firstRow">Row</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
+		<td class="firstRow">Wind speed (M/s)</td>
+		<td *ngFor="let day of getWindSpeed()">{{day}}</td>
 	</tr>
 	<tr>
-		<td class="firstRow">Row</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-	</tr>
-	<tr>
-		<td class="firstRow">Row</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-	</tr>
-	<tr>
-		<td class="firstRow">Row</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
-		<td>Cell</td>
+		<td class="firstRow">Wind direction (Degrees)</td>
+		<td *ngFor="let day of getWindDirection()">{{day}}</td>
 	</tr>
 	</tbody>
 </table>
@@ -123,6 +63,33 @@
 <hr>
 
 <h1>Long Term History</h1>
-
-<h2>Temperature</h2>
-<h2>Precipitation</h2>
+	<table class="forecastTable">
+		<thead>
+		<tr>
+			<th></th>
+			<th>January</th>
+			<th>February</th>
+			<th>March</th>
+			<th>April</th>
+			<th>May</th>
+			<th>June</th>
+			<th>July</th>
+			<th>August</th>
+			<th>September</th>
+			<th>October</th>
+			<th>November</th>
+			<th>December</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td class="firstRow">Temperature</td>
+			<td *ngFor="let temp of getTemperatures()">{{temp}}</td>
+		</tr>
+		<tr>
+			<td class="firstRow">Precipitation</td>
+			<td *ngFor="let precipitation of getPrecipitations()">{{precipitation}}</td>
+		</tr>
+		</tbody>
+	</table>
+</div>
