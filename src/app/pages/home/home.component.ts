@@ -16,9 +16,9 @@ export class HomeComponent implements OnInit {
 	public cities: Location[] | null;
 	public temperatures: number[] | null;
 	public precipitations: number[] | null;
-	public precipitationWarning: string | undefined;
-	public tempWarning: string | undefined;
-	public frostWarning: string | undefined;
+	public precipitationWarning: boolean | undefined;
+	public tempWarning: boolean | undefined;
+	public frostWarning: boolean | undefined;
 
 
 	constructor(public profileService: ProfileService, private weatherService: WeatherService) {
@@ -26,6 +26,9 @@ export class HomeComponent implements OnInit {
 		this.cities = null;
 		this.temperatures = null;
 		this.precipitations = null;
+		this.precipitationWarning = false;
+		this.tempWarning = false;
+		this.frostWarning = false;
 		// console.log(localStorage.getItem('token'));
 	}
 
@@ -66,18 +69,21 @@ export class HomeComponent implements OnInit {
 	}
 
 	private getWarnings(): void {
-		this.weatherService.getWarnings("rain").subscribe((resp: Response) => {
+		let first = this.weatherService.getWarnings("rain").subscribe((resp: Response) => {
 			// @ts-ignore
 			this.precipitationWarning = resp['data'];
 		});
-		this.weatherService.getWarnings("temp").subscribe((resp: Response) => {
+		let second = this.weatherService.getWarnings("temp").subscribe((resp: Response) => {
 			// @ts-ignore
 			this.tempWarning = resp['data'];
 		});
-		this.weatherService.getWarnings("frost").subscribe((resp: Response) => {
+		let third =  this.weatherService.getWarnings("frost").subscribe((resp: Response) => {
 			// @ts-ignore
 			this.frostWarning = resp['data'];
 		});
+		if (first && second && third) {
+			this.sound();
+		}
 	}
 
 	public getTemperatures(): number[] | null {
